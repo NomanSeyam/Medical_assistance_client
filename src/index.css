@@ -1,0 +1,21 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+*{
+    @apply scroll-smooth
+}
+
+.hover-btn{
+    @apply btn btn-outline  border-0 border-b-2 hover:bg-transparent hover:text-black hover:border-0 hover:border-t-2
+}
+.style-btn{
+    @apply border-2 bg-transparent font-bold border-green-800 text-black rounded py-1  text-xs hover:bg-pink-500 hover:border-0  
+}
+.text-input{
+    @apply input input-bordered w-96 
+}
+.text-input-full{
+    @apply input input-bordered  
+}
