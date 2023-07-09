@@ -6,7 +6,6 @@ const AdminDashbord = () => {
     const { user } = useAuth()
     return (
         <>
-           
             <li className='mt-12'><NavLink to='/dashbord/adminhome'> Admin home </NavLink></li>
             <li><NavLink to='/dashbord/manageuser'> Manage Users </NavLink></li>
             <li><NavLink to='/dashbord/managepost'> Manage Post </NavLink></li>

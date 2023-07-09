@@ -33,7 +33,7 @@ const PostList = ({ posts, refetch }) => {
 
 
 
-        fetch(`http://localhost:5000/selectdoctor`, {
+        fetch(`https://doctors-server-alpha.vercel.app/selectdoctor`, {
             method: "POST",
             headers: { 'content-type': 'application/json' },
             body: JSON.stringify(selectCourse)
@@ -53,37 +53,37 @@ const PostList = ({ posts, refetch }) => {
     }
 
     return (
-        // <Slide >
-        <div className={posts.seats == 0 ? "card  card-compact w-96 bg-red-600 shadow-xl" : "card border-2 card-compact w-96 bg-base-100 hover:shadow-xl"}>
-            <figure><img className='w-96 h-72 rounded-md' src={disease_image} alt="Shoes" /></figure>
+        <Slide >
+            <div className={posts.seats == 0 ? "card  card-compact w-96 bg-red-600 shadow-xl" : "card border-2 card-compact w-96 bg-base-100 hover:shadow-xl"}>
+                <figure><img className='w-96 h-72 rounded-md' src={disease_image} alt="Shoes" /></figure>
 
-            <div className="card-body">
-                <h2 className="card-title">Specilest of : {specilest}</h2>
-                <h2 className="card-title">Doctor : {doctor_Name}</h2>
-                <h2 className="">Visited Time : {visit_Time}</h2>
-                <h2 className="">Available Serial : {serial}</h2>
-                <h2 className="">Booked  : {bookingPatient}</h2>
-                <p>Visit :  {visit} tk</p>
-                <p>Contact info :  {doctor_email} </p>
-                <div className='flex justify-between'>
-                    {
-                        user ?
-                            <>
-                                <button disabled={disableBtn || isadmin === true || isDoctor === true || posts.seats == 0} onClick={handleSelectCourse} className="hover-btn text-end">Select This Doctors</button>
+                <div className="card-body">
+                    <h2 className="card-title">Specilest of : {specilest}</h2>
+                    <h2 className="card-title">Doctor : {doctor_Name}</h2>
+                    <h2 className="">Visited Time : {visit_Time}</h2>
+                    <h2 className="">Available Serial : {serial}</h2>
+                    <h2 className="">Booked  : {bookingPatient}</h2>
+                    <p>Visit :  {visit} tk</p>
+                    <p>Contact info :  {doctor_email} </p>
+                    <div className='flex justify-between'>
+                        {
+                            user ?
+                                <>
+                                    <button disabled={disableBtn || isadmin === true || isDoctor === true || posts.seats == 0} onClick={handleSelectCourse} className="hover-btn text-end">Select This Doctors</button>
 
-                                {rating.patient &&
-                                    <Link state={posts} to='/review'>
-                                        <button className="hover-btn px-12">Reviews</button>
-                                    </Link>}</>
-                            :
-                            <Link to='/login' className='w-full'>
-                                <button className='hover-btn w-full'>Login Please</button>
-                            </Link>
-                    }
+                                    {rating.patient &&
+                                        <Link state={posts} to='/review'>
+                                            <button className="hover-btn px-12">Reviews</button>
+                                        </Link>}</>
+                                :
+                                <Link to='/login' className='w-full'>
+                                    <button className='hover-btn w-full'>Login Please</button>
+                                </Link>
+                        }
+                    </div>
                 </div>
             </div>
-        </div>
-        // {/* </Slide> */}
+        </Slide>
 
     );
 };

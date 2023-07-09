@@ -25,7 +25,7 @@ const Add_Post = () => {
             status: "Pending"
         }
         console.log(classData)
-        fetch('http://localhost:5000/newpost', {
+        fetch('https://doctors-server-alpha.vercel.app/newpost', {
             method: "POST",
             headers: { 'content-type': 'application/json' },
             body: JSON.stringify(classData)

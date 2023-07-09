@@ -31,7 +31,7 @@ const SelectedPost = () => {
         }).then((result) => {
             if (result.isConfirmed) {
                 console.log(_id);
-                fetch(`http://localhost:5000/selectedoctors/${_id}`, {
+                fetch(`https://doctors-server-alpha.vercel.app/selectedoctors/${_id}`, {
                     method: "DELETE"
                 })
                     .then(res => res.json())

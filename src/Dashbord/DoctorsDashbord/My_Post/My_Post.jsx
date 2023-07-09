@@ -28,7 +28,7 @@ const My_Post = () => {
             confirmButtonText: 'Yes, delete it!'
         }).then((result) => {
             if (result.isConfirmed) {
-                fetch(`https://summer-school-data.vercel.app/class/${id}`, {
+                fetch(`https://doctors-server-alpha.vercel.app/post/${id}`, {
                     method: "DELETE"
                 })
                     .then(res => res.json())

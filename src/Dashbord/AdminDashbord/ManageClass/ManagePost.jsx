@@ -16,7 +16,7 @@ const ManagePost = () => {
 
     const handleAppproveClass = (id) => {
         console.log(id)
-        fetch(`http://localhost:5000/approvepost/${id}`, {
+        fetch(`https://doctors-server-alpha.vercel.app/approvepost/${id}`, {
             method: 'PATCH'
         })
             .then(res => res.json())
@@ -40,7 +40,7 @@ const ManagePost = () => {
             confirmButtonText: 'Yes, Deny it'
         }).then((result) => {
             if (result.isConfirmed) {
-                fetch(`http://localhost:5000/denypost/${id}`, {
+                fetch(`https://doctors-server-alpha.vercel.app/denypost/${id}`, {
                     method: 'PATCH'
                 })
                     .then(res => res.json())

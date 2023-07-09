@@ -1,5 +1,5 @@
 import React from 'react';
-import { useParams } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 import { TypeAnimation } from 'react-type-animation';
 import Lottie from "lottie-react";
 import successAnimation from '../../../../public/97987-success.json'
@@ -27,6 +27,7 @@ const CheckOutFormSuccess = () => {
                     style={{ fontSize: '2em', fontWeight: '700px' }}
                     repeat={Infinity}
                 />
+                <Link to='/'><button className='hover-btn'>Go to Home</button></Link>
             </div>
         </div>
     );

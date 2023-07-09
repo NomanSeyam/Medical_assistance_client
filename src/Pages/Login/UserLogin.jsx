@@ -21,12 +21,13 @@ const UserLogin = () => {
     const onSubmit = data => {
 
         console.log(data)
+        console.log(login)
         login(data.email, data.password)
             .then(result => {
                 console.log(result.user)
                 const user = result.user
                 const userinfo = { name: user.displayName, email: user.email, userProfile: user.photoURL, role: "users" };
-                fetch('http://localhost:5000/users', {
+                fetch('https://doctors-server-alpha.vercel.app/users', {
                     method: "POST",
                     headers: { 'content-type': 'application/json' },
                     body: JSON.stringify(userinfo)

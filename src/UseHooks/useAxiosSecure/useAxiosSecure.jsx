@@ -1,14 +1,14 @@
 import React, { useEffect } from 'react';
 import axios from 'axios';
-import useAuth from '../useAuth/useAuth';
 
 
 const useAxiosSecure = () => {
-    const { logOut } = useAuth
+    // const { logOut } = AuthProvaiders(AuthContext)
 
 
     const axiosSecure = axios.create({
-        baseURL: 'http://localhost:5000',
+        // baseURL: 'http://localhost:5000/',
+        baseURL: 'https://doctors-server-alpha.vercel.app/',
     });
 
     useEffect(() => {
@@ -26,10 +26,10 @@ const useAxiosSecure = () => {
             (response) => response,
             async (error) => {
                 // console.log('axiox error respone' , error.response)
-                console.log(error)
+                console.log(error.response.data.message)
                 if (error.response && (error.response.status === 401 || error.response.status === 403)) {
-                    await logOut();
-                    navigate('/login');
+                    // await logOut();
+                    // navigate('/login');
                     console.log('user logout')
                 }
                 return Promise.reject(error);

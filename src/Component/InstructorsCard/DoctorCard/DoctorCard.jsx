@@ -9,7 +9,7 @@ const DoctorCard = ({doctor}) => {
                 <h2 className="card-title">{doctor.name}</h2>
                 <h5>Doctor Of : <span className='text-success font-bold'>{doctor.specialty}</span></h5>
                 <p>MBBS complete From <span className='font-semibold'>{doctor.medicalCollege}</span></p>
-                <p>Btach : {doctor.batch}</p>
+                <p>Batch : {doctor.batch}</p>
                 <p>Achivement : <span className='uppercase'>{doctor.degrees}</span></p>
                 <p className='flex gap-2 items-center'>Patient Review :
                     <Rating

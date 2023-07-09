@@ -8,7 +8,7 @@ const Add_Doctor = () => {
 
     const onSubmit = data => {
         console.log(data)
-        fetch('http://localhost:5000/ourdoctors', {
+        fetch('https://doctors-server-alpha.vercel.app/ourdoctors', {
             method: "POST",
             headers: { 'content-type': 'application/json' },
             body: JSON.stringify(data)

@@ -14,7 +14,7 @@ const UsersDashbord = () => {
         <li >{user?.role}</li>
       </div>
       <li><NavLink to='/dashbord/selectedpost'> Selected Doctor's </NavLink></li>
-      <li><NavLink to='/dashbord/bookedpost'>Booking Doctor's</NavLink></li>
+      <li><NavLink to='/dashbord/bookedpost'>Appoint Doctor</NavLink></li>
       <li><NavLink to='/dashbord/paymenthistory'> Payment History</NavLink></li>
     </>
   );

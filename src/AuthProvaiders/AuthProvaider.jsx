@@ -49,7 +49,7 @@ const AuthProvaiders = ({ children }) => {
             setLoading(false)
             if (presentUser) {
                 // console.log('res');
-                axios.post('http://localhost:5000/jwt', { email: presentUser.email })
+                axios.post('https://doctors-server-alpha.vercel.app/jwt', { email: presentUser.email })
                     .then(response => {
                         // console.log('res', response.data.token);
                         localStorage.setItem('access-token', response.data.token);

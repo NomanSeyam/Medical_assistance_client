@@ -1,17 +1,23 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import useAxiosSecure from '../../UseHooks/useAxiosSecure/useAxiosSecure';
 import { useQuery } from 'react-query';
 import { Dna } from 'react-loader-spinner';
 import useAuth from '../../UseHooks/useAuth/useAuth';
 
 const Medicine = () => {
+    const [medicine, setMedicine] = useState([''])
+    const [searchMedicine, setSearchMedicine] = useState("");
+    const [searchResult, setSearchresult] = useState(true)
+
     const { user } = useAuth();
     const [axiosSecure] = useAxiosSecure();
     const { data: medicines = [], refetch, isLoading: pageLoading } = useQuery(['medicine'], async () => {
         const res = await axiosSecure.get('/medicine')
-        console.log(res.data)
+        // console.log(res.data)
+        setMedicine(res.data)
         return res.data;
     })
+    console.log(medicine)
     if (pageLoading) {
         return <div className='flex justify-center items-center mt-60'>
             <Dna
@@ -24,6 +30,20 @@ const Medicine = () => {
             />
         </div>
     }
+
+    // const allMedicine = 'http://localhost:5000/medicine'
+
+    // useEffect(() => {
+    //     fetch(allMedicine)
+    //         .then(res => res.json())
+    //         .then(data => {
+    //             setMedicine(data)
+    //             console.log(data)
+    //             if (data.length == 0) {
+    //                 setSearchresult(false)
+    //             }
+    //         })
+    // }, [allMedicine]);
 
     const handlePaymentAmount = (medicine) => {
         console.log('pay', medicine)
@@ -53,12 +73,35 @@ const Medicine = () => {
             })
     }
 
+    const handleSearch = () => {
+        fetch(`http://localhost:5000/medicineBySearch/${searchMedicine}`)
+            .then((res) => res.json())
+            .then((data) => {
+                console.log(data);
+                setMedicine(data);
+                if (data.length === 0) {
+                    setSearchresult(false)
+                } else {
+                    setSearchresult(true)
+                }
+
+            });
+    };
 
     return (
         <div className='my-8'>
+            <div className="search-box p-2 text-center">
+                <input
+                    onChange={(e) => setSearchMedicine(e.target.value)}
+                    type="text"
+                    className="py-1 px-4 text-center border-2 rounded-md border-primary w-72"
+                    placeholder='Search Medicine '
+                />{" "}
+                <button className='w-24  border-2 rounded-md border-primary py-1' onClick={handleSearch}>Search</button>
+            </div>
             <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-y-12 justify-center '>
                 {
-                    medicines?.map(medicine =>
+                    medicine?.map(medicine =>
                         <div key={medicine._id} className="card w-[350px]  mx-auto bg-base-200 hover:shadow-2xl border-2">
                             <div className="card-body">
                                 <h2 className="card-title">Medicine  : <span className='font-semibold text-violet-700'>{medicine.name}</span></h2>

@@ -1,5 +1,5 @@
 import React from 'react';
-import { NavLink, Outlet } from 'react-router-dom';
+import { Link, NavLink, Outlet } from 'react-router-dom';
 import { FaHome, FaMailBulk } from 'react-icons/fa';
 import AdminDashbord from '../Dashbord/AdminDashbord/AdminDashbord';
 import useAdmin from '../UseHooks/useAdmin/useAdmin';
@@ -46,10 +46,10 @@ const DashBord = () => {
 
                         <div className="divider"></div>
                         <li><NavLink to='/'><FaHome /> HOME</NavLink></li>
-                        <li><Link to='/doctors'>Our Doctors</Link></li>
-                        <li><Link to='/post'>Doctor's Post</Link></li>
-                        <li><Link to='/donation'> Donation</Link></li>
-                        <li><Link to='/medicine'> Medicine</Link></li>
+                        <li><NavLink to='/doctors'>Our Doctors</NavLink></li>
+                        <li><NavLink to='/post'>Doctor's Post</NavLink></li>
+                        <li><NavLink to='/donation'>Blood Donation</NavLink></li>
+                        <li><NavLink to='/medicine'> Medicine</NavLink></li>
 
 
                     </ul>

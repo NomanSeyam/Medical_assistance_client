@@ -27,7 +27,7 @@ const Feedback = () => {
         }
         console.log(reviewInfo)
 
-        fetch(`http://localhost:5000/review/${ID}`, {
+        fetch(`https://doctors-server-alpha.vercel.app/review/${ID}`, {
             method: "PATCH",
             headers: { 'content-type': 'application/json' },
             body: JSON.stringify(reviewInfo)

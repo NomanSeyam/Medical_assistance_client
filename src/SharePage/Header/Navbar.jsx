@@ -29,7 +29,7 @@ const Navbar = () => {
         <li><Link to="/">Home</Link></li>
         <li><Link to='/doctors'>Our Doctors</Link></li>
         <li><Link to='/post'>Doctor's Post</Link></li>
-        <li><Link to='/donation'> Donation</Link></li>
+        <li><Link to='/donation'>Blood Donation</Link></li>
         <li><Link to='/medicine'> Medicine</Link></li>
         <li><Link to='/dashbord'>Dashbord</Link></li>
 

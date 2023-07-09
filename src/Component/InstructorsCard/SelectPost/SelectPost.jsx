@@ -5,7 +5,7 @@ import useAxiosSecure from '../../../UseHooks/useAxiosSecure/useAxiosSecure';
 
 const SelectPost = ({ post, index, handleRemovepost, user }) => {
     const [axiosSecure] = useAxiosSecure();
-    console.log(post)
+    // console.log(post)
     const { disease_image, bookingID, specilest, doctor_Name, visit, _id, payment_status, visit_Time } = post;
 
 
@@ -20,23 +20,24 @@ const SelectPost = ({ post, index, handleRemovepost, user }) => {
             _id: _id,
             bookingID: bookingID
         }
+        console.log('paymentInfo' , paymentInfo)
 
-        fetch('http://localhost:5000/visitpayment', {
+        fetch('https://doctors-server-alpha.vercel.app/visitpayment', {
             method: "POST",
             headers: { 'content-type': 'application/json' },
             body: JSON.stringify(paymentInfo)
         })
             .then(res => res.json())
             .then((data) => {
-                console.log('data', data)
-                fetch(`http://localhost:5000/paymentsuccess/${bookingID}`, {
+                console.log('data111', data)
+                fetch(`https://doctors-server-alpha.vercel.app/paymentsuccess/${bookingID}`, {
                     method: 'PATCH'
                 })
                     .then(res => res.json())
                     .then(data => {
                         console.log(data);
                     })
-                fetch(`http://localhost:5000/changeSerial/${bookingID}`, {
+                fetch(`https://doctors-server-alpha.vercel.app/changeSerial/${bookingID}`, {
                     method: 'PATCH'
                 })
                     .then(res => res.json())

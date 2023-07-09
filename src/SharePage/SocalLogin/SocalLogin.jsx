@@ -17,7 +17,7 @@ const SocalLogin = () => {
                 const userinfo = { name: loggedUser.displayName, email: loggedUser.email, userProfile: loggedUser.photoURL, role: "users" };
                 console.log(userinfo)
 
-                fetch('http://localhost:5000/users', {
+                fetch('https://doctors-server-alpha.vercel.app/users', {
                     method: "POST",
                     headers: { 'content-type': 'application/json' },
                     body: JSON.stringify(userinfo)

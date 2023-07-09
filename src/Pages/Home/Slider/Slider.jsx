@@ -13,7 +13,7 @@ const Slider = () => {
 
                         <div className='text-white space-y-7 lg:w-[900px] ml-12'>
                             <h1 className='text-6xl font-extrabold'>Exploring the Rhythm of Sound </h1>
-                            <p className='capitalize'>Race into action with our high-speed toy cars that will leave you breathless. From sleek sports cars to rugged off-roaders, we have them all!</p>
+                            <p className='capitalize text-xl'>Race into action with our high-speed toy cars that will leave you breathless. From sleek sports cars to rugged off-roaders, we have them all!</p>
 
                         </div>
                     </div>
@@ -29,7 +29,7 @@ const Slider = () => {
                     <div className="absolute flex items-center  bg-gradient-to-r from-[#151515] to-[rgba(21, 21, 21, 0)] w-full  h-full top-0 left-0 ">
                         <div className='text-white space-y-7 lg:w-[900px] ml-12'>
                             <h1 className='text-6xl font-extrabold'>Harmonious Melodies </h1>
-                            <p className='capitalize'>Discover timeless classics and iconic models that car enthusiasts will love. Build your dream collection with our range of vintage and collectible cars.</p>
+                            <p className='capitalize text-xl'>Discover timeless classics and iconic models that car enthusiasts will love. Build your dream collection with our range of vintage and collectible cars.</p>
 
 
                         </div>
@@ -57,7 +57,7 @@ const Slider = () => {
                     <div className="absolute flex items-center  bg-gradient-to-r from-[#151515] to-[rgba(21, 21, 21, 0)] w-full  h-full top-0 left-0 ">
                         <div className='text-white space-y-7 lg:w-[900px] ml-12'>
                             <h1 className='text-6xl font-extrabold'>ake to the Skies!</h1>
-                            <p className='capitalize'>Explore the world of aviation with our fantastic selection of toy planes and helicopters. Let your imagination soar high above the clouds!</p>
+                            <p className='capitalize text-xl'>Explore the world of aviation with our fantastic selection of toy planes and helicopters. Let your imagination soar high above the clouds!</p>
 
                         </div>
                     </div>

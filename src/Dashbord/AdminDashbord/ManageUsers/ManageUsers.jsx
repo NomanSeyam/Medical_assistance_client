@@ -14,7 +14,7 @@ const ManageUsers = () => {
 
     const handlemakeAdmin = (user) => {
         console.log(user)
-        fetch(`http://localhost:5000/users/admin/${user._id}`, {
+        fetch(`https://doctors-server-alpha.vercel.app/users/admin/${user._id}`, {
             method: 'PATCH'
         })
             .then(res => res.json())
@@ -26,7 +26,7 @@ const ManageUsers = () => {
     }
     const handlemakeInstructor = (user) => {
         console.log(user)
-        fetch(`http://localhost:5000/users/doctor/${user._id}`, {
+        fetch(`https://doctors-server-alpha.vercel.app/users/doctor/${user._id}`, {
             method: 'PATCH'
         })
             .then(res => res.json())

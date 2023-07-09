@@ -2,6 +2,7 @@ import React from 'react';
 import Lottie from "lottie-react";
 import failedAnimation from '../../../../public/107311-failed-red.json'
 import { TypeAnimation } from 'react-type-animation';
+import { Link } from 'react-router-dom';
 
 const CheckOutFormFail = () => {
     return (
@@ -24,6 +25,7 @@ const CheckOutFormFail = () => {
                 style={{ fontSize: '2em' , fontWeight:'700px' }}
                 repeat={Infinity}
             />
+             <Link to='/'><button className='hover-btn'>Go to Home</button></Link>
         </div>
     );
 };
